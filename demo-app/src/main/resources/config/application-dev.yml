@@ -1,0 +1,25 @@
+# CREATE SCHEMA `demo-dev`;
+# CREATE USER 'demo-dev'@'%' IDENTIFIED BY 'demo-dev';
+# GRANT ALL ON *.* TO 'demo-dev'@'%';
+
+spring-config:
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 10
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo-dev?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: demo-dev
+    password: demo-dev
+  jpa:
+    hibernate.ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        jdbc:
+          time_zone: UTC
