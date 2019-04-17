@@ -1,0 +1,27 @@
+
+spring:
+  datasource:
+    url: ${spring-config.datasource.url}
+    driver-class-name: ${spring-config.datasource.driver-class-name}
+    username: ${spring-config.datasource.username}
+    password: ${spring-config.datasource.password}
+  flyway:
+    check-location: false
+    out-of-order: true
+  jpa:
+    hibernate.ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        dialect: ${spring-config.jpa.properties.hibernate.dialect}
+        jdbc:
+          time_zone: UTC
+  profiles:
+    active: native
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
