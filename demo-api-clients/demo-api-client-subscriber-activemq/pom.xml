@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.oregor.trinity.demo.java</groupId>
-    <artifactId>demo-aux-details</artifactId>
+    <artifactId>demo-api-clients</artifactId>
     <version>0.0.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.oregor.trinity.demo.java.demo-aux-details</groupId>
-  <artifactId>demo-publisher-activemq</artifactId>
+  <groupId>com.oregor.trinity.demo.java.demo-api-clients</groupId>
+  <artifactId>demo-api-client-subscriber-activemq</artifactId>
 
   <dependencies>
-    <!--AUX-->
+    <!--API-->
     <dependency>
       <groupId>com.oregor.trinity.demo.java</groupId>
-      <artifactId>demo-aux</artifactId>
+      <artifactId>demo-api</artifactId>
     </dependency>
 
     <!--TEST-->

@@ -14,7 +14,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>demo-publisher-activemq</module>
+    <module>demo-aux-detail-publisher-activemq</module>
   </modules>
 
 </project>

@@ -4,41 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.oregor.trinity.demo.java</groupId>
-    <artifactId>demo-api-clients</artifactId>
+    <artifactId>demo-domain-details</artifactId>
     <version>0.0.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.oregor.trinity.demo.java.demo-api-clients</groupId>
-  <artifactId>demo-api-rest</artifactId>
+  <groupId>com.oregor.trinity.demo.java</groupId>
+  <artifactId>demo-domain-detail-services</artifactId>
 
   <dependencies>
-    <!--SPRING BOOT WEB-->
+    <!--SPRING STEREOTYPE-->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
     </dependency>
 
-    <!--APACHE-->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-    </dependency>
-
-    <!--DDD4J-->
-    <dependency>
-      <groupId>com.oregor.ddd4j</groupId>
-      <artifactId>ddd4j-api-client-rest-spring</artifactId>
-    </dependency>
-
-    <!--API-->
+    <!--DOMAIN-->
     <dependency>
       <groupId>com.oregor.trinity.demo.java</groupId>
-      <artifactId>demo-api</artifactId>
+      <artifactId>demo-domain</artifactId>
     </dependency>
 
     <!--TEST-->

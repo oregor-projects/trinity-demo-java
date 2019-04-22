@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
   <modules>
@@ -126,8 +126,8 @@
     <!--INFLECTOR-->
     <evo-inflector.version>1.2.2</evo-inflector.version>
 
-    <!--OREGOR-->
-    <oregor-ddd4j.version>0.0.2-SNAPSHOT</oregor-ddd4j.version>
+    <!--DDD4J-->
+    <ddd4j.version>0.0.2</ddd4j.version>
   </properties>
 
   <dependencies>
@@ -163,14 +163,14 @@
       <dependency>
         <groupId>com.oregor.trinity.demo.java</groupId>
         <artifactId>demo-domain</artifactId>
-          <version>${project.version}</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!--AUXILIARY-->
       <dependency>
         <groupId>com.oregor.trinity.demo.java</groupId>
         <artifactId>demo-aux</artifactId>
-          <version>${project.version}</version>
+        <version>${project.version}</version>
       </dependency>
 
       <!--API DETAIL-->
@@ -187,14 +187,14 @@
       <!--REST SPRING-->
       <dependency>
         <groupId>com.oregor.trinity.demo.java.demo-api-clients</groupId>
-        <artifactId>demo-api-rest</artifactId>
+        <artifactId>demo-api-client-rest-spring</artifactId>
         <version>${project.version}</version>
       </dependency>
 
       <!--SUBSCRIBER ACTIVEMQ-->
       <dependency>
         <groupId>com.oregor.trinity.demo.java.demo-api-clients</groupId>
-        <artifactId>demo-api-subscriber-activemq</artifactId>
+        <artifactId>demo-api-client-subscriber-activemq</artifactId>
         <version>${project.version}</version>
       </dependency>
 
@@ -202,11 +202,11 @@
       <!-- DOMAIN DETAILS                                                                        -->
       <!-- ===================================================================================== -->
 
-      <!--PERSISTENCE RDBMS-->
+      <!--REPOSITORY SPRING DATA JPA-->
       <dependency>
         <groupId>com.oregor.trinity.demo.java.demo-domain-details</groupId>
-        <artifactId>demo-domain-persistence-rdbms</artifactId>
-          <version>${project.version}</version>
+        <artifactId>demo-domain-detail-repository-springdatajpa</artifactId>
+        <version>${project.version}</version>
       </dependency>
 
       <!-- ===================================================================================== -->
@@ -216,7 +216,7 @@
       <!--PUBLISHER ACTIVEMQ-->
       <dependency>
         <groupId>com.oregor.trinity.demo.java.demo-aux-details</groupId>
-        <artifactId>demo-publisher-activemq</artifactId>
+        <artifactId>demo-aux-detail-publisher-activemq</artifactId>
         <version>${project.version}</version>
       </dependency>
 
@@ -226,7 +226,7 @@
       <dependency>
         <groupId>com.oregor.ddd4j</groupId>
         <artifactId>ddd4j-bom</artifactId>
-          <version>${oregor-ddd4j.version}</version>
+        <version>${ddd4j.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -251,6 +251,11 @@
             <source>${java.version}</source>
             <target>${java.version}</target>
             <encoding>${project.build.sourceEncoding}</encoding>
+            <showWarnings>true</showWarnings>
+            <compilerArgs>
+              <arg>-Xlint:all</arg>
+              <arg>-Werror</arg>
+            </compilerArgs>
           </configuration>
         </plugin>
         <!-- ===================================================================== -->

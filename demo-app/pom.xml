@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.oregor.trinity.demo.java</groupId>
     <artifactId>trinity-demo-java</artifactId>
@@ -38,13 +38,13 @@
     <!-- REST SPRING -->
     <dependency>
       <groupId>com.oregor.trinity.demo.java.demo-api-clients</groupId>
-      <artifactId>demo-api-rest</artifactId>
+      <artifactId>demo-api-client-rest-spring</artifactId>
     </dependency>
 
     <!-- SUBSCRIBER ACTIVEMQ -->
     <dependency>
       <groupId>com.oregor.trinity.demo.java.demo-api-clients</groupId>
-      <artifactId>demo-api-subscriber-activemq</artifactId>
+      <artifactId>demo-api-client-subscriber-activemq</artifactId>
     </dependency>
 
     <!-- ======================================================================================= -->
@@ -54,7 +54,7 @@
     <!-- PERSISTENCE RDBMS -->
     <dependency>
       <groupId>com.oregor.trinity.demo.java.demo-domain-details</groupId>
-      <artifactId>demo-domain-persistence-rdbms</artifactId>
+      <artifactId>demo-domain-detail-repository-springdatajpa</artifactId>
     </dependency>
 
     <!-- ======================================================================================= -->
@@ -64,7 +64,7 @@
     <!-- PUBLISHER ACTIVEMQ -->
     <dependency>
       <groupId>com.oregor.trinity.demo.java.demo-aux-details</groupId>
-      <artifactId>demo-publisher-activemq</artifactId>
+      <artifactId>demo-aux-detail-publisher-activemq</artifactId>
     </dependency>
 
     <!-- ======================================================================================= -->
@@ -82,6 +82,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -14,8 +14,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>demo-domain-persistence-rdbms</module>
-    <module>demo-domain-services</module>
+    <module>demo-domain-detail-repository-springdatajpa</module>
+    <module>demo-domain-detail-services</module>
   </modules>
 
 </project>
