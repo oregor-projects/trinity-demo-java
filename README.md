@@ -1,6 +1,4 @@
-# trinity-demo-java
-
-Demo microservice application structured according to the Trinity Architecture.
+# Demo microservice application structured according to the Trinity Architecture
 
 To learn more about the Trinity Architecture go to: https://medium.com/oregor
 

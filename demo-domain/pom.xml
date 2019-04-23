@@ -30,10 +30,10 @@
       <artifactId>querydsl-jpa</artifactId>
     </dependency>
 
-    <!--DDD4J-->
+    <!--TRINITY4J-->
     <dependency>
-      <groupId>com.oregor.ddd4j</groupId>
-      <artifactId>ddd4j-domain</artifactId>
+      <groupId>com.oregor.trinity4j</groupId>
+      <artifactId>trinity4j-domain</artifactId>
     </dependency>
 
     <!--TEST-->

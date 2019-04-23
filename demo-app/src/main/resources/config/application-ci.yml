@@ -15,4 +15,4 @@ spring-config:
   jpa:
     properties:
       hibernate:
-        dialect: com.oregor.ddd4j.domain.hibernate.CustomH2Dialect
+        dialect: com.oregor.trinity4j.domain.hibernate.CustomH2Dialect

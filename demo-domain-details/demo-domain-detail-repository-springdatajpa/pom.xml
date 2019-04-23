@@ -42,10 +42,10 @@
       <artifactId>querydsl-jpa</artifactId>
     </dependency>
 
-    <!--DDD4J-->
+    <!--TRINITY4J-->
     <dependency>
-      <groupId>com.oregor.ddd4j.ddd4j-domain-details</groupId>
-      <artifactId>ddd4j-domain-detail-repository-springdatajpa</artifactId>
+      <groupId>com.oregor.trinity4j.trinity4j-domain-details</groupId>
+      <artifactId>trinity4j-domain-detail-repository-springdatajpa</artifactId>
     </dependency>
 
     <!--DOMAIN-->

@@ -30,7 +30,7 @@
   <inceptionYear>2019</inceptionYear>
 
   <organization>
-    <name>OREGOR LTD</name>
+    <name>Christos Tsakostas, OREGOR LTD</name>
     <url>https://www.oregor.com</url>
   </organization>
 
@@ -126,8 +126,8 @@
     <!--INFLECTOR-->
     <evo-inflector.version>1.2.2</evo-inflector.version>
 
-    <!--DDD4J-->
-    <ddd4j.version>0.0.2</ddd4j.version>
+    <!--TRINITY4J-->
+    <trinity4j.version>0.0.2</trinity4j.version>
   </properties>
 
   <dependencies>
@@ -224,9 +224,9 @@
       <!-- OREGOR                                                                                -->
       <!-- ===================================================================================== -->
       <dependency>
-        <groupId>com.oregor.ddd4j</groupId>
-        <artifactId>ddd4j-bom</artifactId>
-        <version>${ddd4j.version}</version>
+        <groupId>com.oregor.trinity4j</groupId>
+        <artifactId>trinity4j-bom</artifactId>
+        <version>${trinity4j.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -267,7 +267,7 @@
           <version>${license-maven-plugin.version}</version>
           <configuration>
             <licenseName>apache_v2</licenseName>
-            <projectName>trinity-demo-java</projectName>
+            <projectName>Trinity Architecture Demo</projectName>
             <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
             <emptyLineAfterHeader>true</emptyLineAfterHeader>
             <failOnMissingHeader>true</failOnMissingHeader>

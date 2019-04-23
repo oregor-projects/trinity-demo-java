@@ -18,12 +18,12 @@ set -e
 #########################################
 
 # Uncomment the line below if you want to include license information in your source files.
-#./mvnw license:update-file-header
+./mvnw license:update-file-header
 
 ./mvnw fmt:format
 
 # Add profile "validate-license" in the line below to validate license information.
-./mvnw clean install -P validate-code-format,validate-code-style,validate-code-bugs,validate-code \
+./mvnw clean install -P validate-license,validate-code-format,validate-code-style,validate-code-bugs,validate-code \
  -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 ./mvnw test -B

@@ -29,14 +29,14 @@
       <artifactId>commons-io</artifactId>
     </dependency>
 
-    <!--DDD4J-->
+    <!--TRINITY4J-->
     <dependency>
-      <groupId>com.oregor.ddd4j</groupId>
-      <artifactId>ddd4j-commons</artifactId>
+      <groupId>com.oregor.trinity4j</groupId>
+      <artifactId>trinity4j-commons</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.oregor.ddd4j.ddd4j-api-clients</groupId>
-      <artifactId>ddd4j-api-client-rest-spring</artifactId>
+      <groupId>com.oregor.trinity4j.trinity4j-api-clients</groupId>
+      <artifactId>trinity4j-api-client-rest-spring</artifactId>
     </dependency>
 
     <!--API-->
