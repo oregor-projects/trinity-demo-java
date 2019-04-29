@@ -18,7 +18,7 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity.demo.java.Constants;
 import com.oregor.trinity4j.commons.assertion.Assertion;
@@ -27,13 +27,13 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * The Todo Aggregate Root.
+ * The Task Aggregate Root.
  *
  * @author PolyGenesis Platform
  */
 @Entity
-@Table(name = Constants.DEFAULT_TABLE_PREFIX + "todo")
-public class Todo extends AggregateRoot<TodoId> {
+@Table(name = Constants.DEFAULT_TABLE_PREFIX + "task")
+public class Task extends AggregateRoot<TaskId> {
 
   private String description;
   private Boolean done;
@@ -43,19 +43,19 @@ public class Todo extends AggregateRoot<TodoId> {
   // ===============================================================================================
 
   /** No-args constructor for persistence frameworks. */
-  protected Todo() {
+  protected Task() {
     super();
   }
 
   /**
-   * Instantiates a new Todo.
+   * Instantiates a new Task.
    *
-   * @param todoId the todo id
+   * @param taskId the task id
    * @param description the description
    * @param done the done
    */
-  public Todo(TodoId todoId, String description, Boolean done) {
-    super(todoId);
+  public Task(TaskId taskId, String description, Boolean done) {
+    super(taskId);
     setDescription(description);
     setDone(done);
   }

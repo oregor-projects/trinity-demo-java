@@ -18,36 +18,37 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
-
-import com.oregor.trinity4j.api.ApiRequest;
+package com.oregor.trinity.demo.java.task;
 
 /**
- * The Fetch Todo Request.
+ * The Task Collection Record.
  *
  * @author PolyGenesis Platform
  */
-public class FetchTodoRequest extends ApiRequest {
+public class TaskCollectionRecord {
 
-  private String todoId;
+  private String description;
+  private Boolean done;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Fetch Todo Request. */
+  /** Instantiates a new Task Collection Record. */
   @SuppressWarnings("CPD-START")
-  public FetchTodoRequest() {
+  public TaskCollectionRecord() {
     super();
   }
 
   /**
-   * Instantiates a new Fetch Todo Request.
+   * Instantiates a new Task Collection Record.
    *
-   * @param todoId the todo id
+   * @param description the description
+   * @param done the done
    */
-  public FetchTodoRequest(String todoId) {
-    setTodoId(todoId);
+  public TaskCollectionRecord(String description, Boolean done) {
+    setDescription(description);
+    setDone(done);
   }
 
   // ===============================================================================================
@@ -55,12 +56,21 @@ public class FetchTodoRequest extends ApiRequest {
   // ===============================================================================================
 
   /**
-   * Gets the Todo Id.
+   * Gets the Description.
    *
    * @return string
    */
-  public String getTodoId() {
-    return this.todoId;
+  public String getDescription() {
+    return this.description;
+  }
+
+  /**
+   * Gets the Done.
+   *
+   * @return boolean
+   */
+  public Boolean getDone() {
+    return this.done;
   }
 
   // ===============================================================================================
@@ -68,12 +78,21 @@ public class FetchTodoRequest extends ApiRequest {
   // ===============================================================================================
 
   /**
-   * Sets the Todo Id.
+   * Sets the Description.
    *
-   * @param todoId the todo id
+   * @param description the description
+   */
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  /**
+   * Sets the Done.
+   *
+   * @param done the done
    */
   @SuppressWarnings("CPD-END")
-  public void setTodoId(String todoId) {
-    this.todoId = todoId;
+  public void setDone(Boolean done) {
+    this.done = done;
   }
 }

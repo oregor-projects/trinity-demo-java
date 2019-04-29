@@ -18,7 +18,7 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity.demo.java.DemoDomainMessageData;
 import com.oregor.trinity.demo.java.DemoDomainMessageDataConverter;
@@ -27,29 +27,29 @@ import com.oregor.trinity4j.domain.AbstractJpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * The Todo Persistence Implementation.
+ * The Task Persistence Implementation.
  *
  * @author PolyGenesis Platform
  */
 @Repository
-public class TodoPersistenceImpl extends AbstractJpaRepository<Todo, TodoId, DemoDomainMessageData>
-    implements TodoPersistence {
+public class TaskPersistenceImpl extends AbstractJpaRepository<Task, TaskId, DemoDomainMessageData>
+    implements TaskPersistence {
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
   /**
-   * The Todo Persistence Implementation.
+   * The Task Persistence Implementation.
    *
    * @param repository the repository
    * @param domainMessageDataRepository the domain message data repository
    * @param domainMessageDataConverter the domain message data converter
    */
-  public TodoPersistenceImpl(
-      TodoRepository repository,
+  public TaskPersistenceImpl(
+      TaskRepository repository,
       DemoDomainMessageDataRepository domainMessageDataRepository,
       DemoDomainMessageDataConverter domainMessageDataConverter) {
-    super(repository, domainMessageDataRepository, domainMessageDataConverter, TodoId.class);
+    super(repository, domainMessageDataRepository, domainMessageDataConverter, TaskId.class);
   }
 }

@@ -18,7 +18,7 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity.demo.java.RestConstants;
 import com.oregor.trinity4j.api.AbstractRestController;
@@ -34,30 +34,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The Spring REST Controller for Todo Services.
+ * The Spring REST Controller for Task Services.
  *
  * @author PolyGenesis Platform
  */
 @RestController
 @RequestMapping(RestConstants.CONTEXT_REQUEST_MAPPING)
-public class TodoRestService extends AbstractRestController {
+public class TaskRestService extends AbstractRestController {
 
-  private TodoService todoService;
-  private TodoQueryService todoQueryService;
+  private TaskService taskService;
+  private TaskQueryService taskQueryService;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
   /**
-   * Instantiates a new Todo.
+   * Instantiates a new Task.
    *
-   * @param todoService the todo service
-   * @param todoQueryService the todo query service
+   * @param taskService the task service
+   * @param taskQueryService the task query service
    */
-  public TodoRestService(TodoService todoService, TodoQueryService todoQueryService) {
-    this.todoService = todoService;
-    this.todoQueryService = todoQueryService;
+  public TaskRestService(TaskService taskService, TaskQueryService taskQueryService) {
+    this.taskService = taskService;
+    this.taskQueryService = taskQueryService;
   }
 
   // ===============================================================================================
@@ -67,68 +67,68 @@ public class TodoRestService extends AbstractRestController {
   /**
    * REST Endpoint for Create.
    *
-   * @param createTodoRequest the create todo request
+   * @param createTaskRequest the create task request
    * @param httpServletRequest the http servlet request
-   * @return create todo response
+   * @return create task response
    */
-  @PostMapping({"/todos"})
-  public CreateTodoResponse create(
-      @RequestBody CreateTodoRequest createTodoRequest, HttpServletRequest httpServletRequest) {
+  @PostMapping({"/tasks"})
+  public CreateTaskResponse create(
+      @RequestBody CreateTaskRequest createTaskRequest, HttpServletRequest httpServletRequest) {
 
-    Assertion.isNotNull(createTodoRequest, "createTodoRequest is required");
+    Assertion.isNotNull(createTaskRequest, "createTaskRequest is required");
     Assertion.isNotNull(httpServletRequest, "httpServletRequest is required");
 
-    createTodoRequest.setTenantId(getTenantId(httpServletRequest));
-    createTodoRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
+    createTaskRequest.setTenantId(getTenantId(httpServletRequest));
+    createTaskRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
 
-    return todoService.create(createTodoRequest);
+    return taskService.create(createTaskRequest);
   }
 
   /**
    * REST Endpoint for Modify.
    *
-   * @param todoId the todo id
-   * @param modifyTodoRequest the modify todo request
+   * @param taskId the task id
+   * @param modifyTaskRequest the modify task request
    * @param httpServletRequest the http servlet request
-   * @return modify todo response
+   * @return modify task response
    */
-  @PutMapping({"/todos/{todoId}/modify"})
-  public ModifyTodoResponse modify(
-      @PathVariable("todoId") String todoId,
-      @RequestBody ModifyTodoRequest modifyTodoRequest,
+  @PutMapping({"/tasks/{taskId}/modify"})
+  public ModifyTaskResponse modify(
+      @PathVariable("taskId") String taskId,
+      @RequestBody ModifyTaskRequest modifyTaskRequest,
       HttpServletRequest httpServletRequest) {
 
-    Assertion.isNotNull(todoId, "todoId is required");
-    Assertion.isNotNull(modifyTodoRequest, "modifyTodoRequest is required");
+    Assertion.isNotNull(taskId, "taskId is required");
+    Assertion.isNotNull(modifyTaskRequest, "modifyTaskRequest is required");
     Assertion.isNotNull(httpServletRequest, "httpServletRequest is required");
 
-    modifyTodoRequest.setTodoId(todoId);
-    modifyTodoRequest.setTenantId(getTenantId(httpServletRequest));
-    modifyTodoRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
+    modifyTaskRequest.setTaskId(taskId);
+    modifyTaskRequest.setTenantId(getTenantId(httpServletRequest));
+    modifyTaskRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
 
-    return todoService.modify(modifyTodoRequest);
+    return taskService.modify(modifyTaskRequest);
   }
 
   /**
    * REST Endpoint for Fetch.
    *
-   * @param todoId the todo id
+   * @param taskId the task id
    * @param httpServletRequest the http servlet request
-   * @return fetch todo response
+   * @return fetch task response
    */
-  @GetMapping({"/todos/{todoId}"})
-  public FetchTodoResponse fetch(
-      @PathVariable("todoId") String todoId, HttpServletRequest httpServletRequest) {
+  @GetMapping({"/tasks/{taskId}"})
+  public FetchTaskResponse fetch(
+      @PathVariable("taskId") String taskId, HttpServletRequest httpServletRequest) {
 
-    Assertion.isNotNull(todoId, "todoId is required");
+    Assertion.isNotNull(taskId, "taskId is required");
     Assertion.isNotNull(httpServletRequest, "httpServletRequest is required");
 
-    FetchTodoRequest fetchTodoRequest = new FetchTodoRequest();
-    fetchTodoRequest.setTodoId(todoId);
-    fetchTodoRequest.setTenantId(getTenantId(httpServletRequest));
-    fetchTodoRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
+    FetchTaskRequest fetchTaskRequest = new FetchTaskRequest();
+    fetchTaskRequest.setTaskId(taskId);
+    fetchTaskRequest.setTenantId(getTenantId(httpServletRequest));
+    fetchTaskRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
 
-    return todoQueryService.fetch(fetchTodoRequest);
+    return taskQueryService.fetch(fetchTaskRequest);
   }
 
   /**
@@ -138,10 +138,10 @@ public class TodoRestService extends AbstractRestController {
    * @param pageSize the page size
    * @param query the query
    * @param httpServletRequest the http servlet request
-   * @return fetch todo collection response
+   * @return fetch task collection response
    */
-  @GetMapping({"/todos"})
-  public FetchTodoCollectionResponse fetchCollection(
+  @GetMapping({"/tasks"})
+  public FetchTaskCollectionResponse fetchCollection(
       @RequestParam Integer pageNumber,
       @RequestParam Integer pageSize,
       @RequestParam(required = false, defaultValue = "") String query,
@@ -152,12 +152,12 @@ public class TodoRestService extends AbstractRestController {
     Assertion.isNotNull(query, "query is required");
     Assertion.isNotNull(httpServletRequest, "httpServletRequest is required");
 
-    FetchTodoCollectionRequest fetchTodoCollectionRequest = new FetchTodoCollectionRequest();
-    fetchTodoCollectionRequest.setPageNumber(pageNumber);
-    fetchTodoCollectionRequest.setPageSize(pageSize);
-    fetchTodoCollectionRequest.setTenantId(getTenantId(httpServletRequest));
-    fetchTodoCollectionRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
+    FetchTaskCollectionRequest fetchTaskCollectionRequest = new FetchTaskCollectionRequest();
+    fetchTaskCollectionRequest.setPageNumber(pageNumber);
+    fetchTaskCollectionRequest.setPageSize(pageSize);
+    fetchTaskCollectionRequest.setTenantId(getTenantId(httpServletRequest));
+    fetchTaskCollectionRequest.setIpAddress(getRemoteIpAddress(httpServletRequest));
 
-    return todoQueryService.fetchCollection(fetchTodoCollectionRequest);
+    return taskQueryService.fetchCollection(fetchTaskCollectionRequest);
   }
 }

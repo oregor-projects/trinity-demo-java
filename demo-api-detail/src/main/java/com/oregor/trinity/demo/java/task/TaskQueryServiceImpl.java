@@ -18,7 +18,7 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity4j.commons.assertion.Assertion;
 import com.oregor.trinity4j.domain.Paginated;
@@ -29,30 +29,30 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Implements the Todo Query Service.
+ * Implements the Task Query Service.
  *
  * @author PolyGenesis Platform
  */
 @Service
 @Transactional
-public class TodoQueryServiceImpl implements TodoQueryService {
+public class TaskQueryServiceImpl implements TaskQueryService {
 
-  private TodoPersistence todoPersistence;
-  private TodoConverter todoConverter;
+  private TaskPersistence taskPersistence;
+  private TaskConverter taskConverter;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
   /**
-   * Instantiates a new Todo Query Service Impl.
+   * Instantiates a new Task Query Service Impl.
    *
-   * @param todoPersistence the todo persistence
-   * @param todoConverter the todo converter
+   * @param taskPersistence the task persistence
+   * @param taskConverter the task converter
    */
-  public TodoQueryServiceImpl(TodoPersistence todoPersistence, TodoConverter todoConverter) {
-    this.todoPersistence = todoPersistence;
-    this.todoConverter = todoConverter;
+  public TaskQueryServiceImpl(TaskPersistence taskPersistence, TaskConverter taskConverter) {
+    this.taskPersistence = taskPersistence;
+    this.taskConverter = taskConverter;
   }
 
   // ===============================================================================================
@@ -62,45 +62,45 @@ public class TodoQueryServiceImpl implements TodoQueryService {
   /**
    * Fetch.
    *
-   * @param fetchTodoRequest the fetch todo request
-   * @return fetch todo response
+   * @param fetchTaskRequest the fetch task request
+   * @return fetch task response
    */
   @Override
-  public FetchTodoResponse fetch(FetchTodoRequest fetchTodoRequest) {
+  public FetchTaskResponse fetch(FetchTaskRequest fetchTaskRequest) {
 
-    Assertion.isNotNull(fetchTodoRequest, "fetchTodoRequest is required");
+    Assertion.isNotNull(fetchTaskRequest, "fetchTaskRequest is required");
 
-    Todo todo =
-        todoPersistence
-            .restore(new TodoId(UUID.fromString(fetchTodoRequest.getTodoId())))
-            .orElseThrow(() -> new IllegalArgumentException("Cannot restore todo"));
+    Task task =
+        taskPersistence
+            .restore(new TaskId(UUID.fromString(fetchTaskRequest.getTaskId())))
+            .orElseThrow(() -> new IllegalArgumentException("Cannot restore task"));
 
-    return new FetchTodoResponse(todo.getDescription(), todo.getDone());
+    return new FetchTaskResponse(task.getDescription(), task.getDone());
   }
 
   /**
    * Fetch Collection.
    *
-   * @param fetchTodoCollectionRequest the fetch todo collection request
-   * @return fetch todo collection response
+   * @param fetchTaskCollectionRequest the fetch task collection request
+   * @return fetch task collection response
    */
   @Override
-  public FetchTodoCollectionResponse fetchCollection(
-      FetchTodoCollectionRequest fetchTodoCollectionRequest) {
+  public FetchTaskCollectionResponse fetchCollection(
+      FetchTaskCollectionRequest fetchTaskCollectionRequest) {
 
-    Assertion.isNotNull(fetchTodoCollectionRequest, "fetchTodoCollectionRequest is required");
+    Assertion.isNotNull(fetchTaskCollectionRequest, "fetchTaskCollectionRequest is required");
 
-    Paginated<Todo> paginated =
-        todoPersistence.findPaginated(
-            fetchTodoCollectionRequest.getPageNumber(), fetchTodoCollectionRequest.getPageSize());
+    Paginated<Task> paginated =
+        taskPersistence.findPaginated(
+            fetchTaskCollectionRequest.getPageNumber(), fetchTaskCollectionRequest.getPageSize());
 
-    return new FetchTodoCollectionResponse(
+    return new FetchTaskCollectionResponse(
         StreamSupport.stream(paginated.getItems().spliterator(), false)
-            .map(todoConverter::convertToTodoCollectionRecord)
+            .map(taskConverter::convertToTaskCollectionRecord)
             .collect(Collectors.toList()),
         paginated.getTotalPages(),
         paginated.getTotalElements(),
-        fetchTodoCollectionRequest.getPageNumber(),
-        fetchTodoCollectionRequest.getPageSize());
+        fetchTaskCollectionRequest.getPageNumber(),
+        fetchTaskCollectionRequest.getPageSize());
   }
 }

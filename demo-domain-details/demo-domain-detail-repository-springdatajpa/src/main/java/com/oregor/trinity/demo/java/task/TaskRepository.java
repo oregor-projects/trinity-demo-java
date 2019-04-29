@@ -18,31 +18,13 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import com.oregor.trinity.demo.java.RdbmsTest;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.oregor.trinity4j.domain.SpringDataRepository;
 
 /**
- * Tests for the Todo Persistence Implementation.
+ * The Spring Data Repository Interface for Task.
  *
  * @author PolyGenesis Platform
  */
-public class TodoPersistenceImplTest extends RdbmsTest {
-
-  @Autowired private TodoPersistence todoPersistence;
-
-  // ===============================================================================================
-  // TEST CASES
-  // ===============================================================================================
-
-  /** Should store and restore aggregate root. */
-  @Test
-  public void shouldStoreAndRestore() {
-    // TODO [PolyGenesis]: write test case
-    assertThat(todoPersistence).isNotNull();
-  }
-}
+public interface TaskRepository extends SpringDataRepository<Task, TaskId> {}

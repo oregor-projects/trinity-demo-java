@@ -18,33 +18,37 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
+
+import com.oregor.trinity4j.domain.AggregateRootId;
+import java.util.UUID;
+import javax.persistence.Embeddable;
 
 /**
- * Queries contract for Todos.
+ * The Task Aggregate Root Id.
  *
  * @author PolyGenesis Platform
  */
-public interface TodoQueryService {
+@Embeddable
+public class TaskId extends AggregateRootId {
+
+  private static final long serialVersionUID = 1L;
 
   // ===============================================================================================
-  // METHODS
+  // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /**
-   * Fetch.
-   *
-   * @param fetchTodoRequest the fetch todo request
-   * @return fetch todo response
-   */
-  FetchTodoResponse fetch(FetchTodoRequest fetchTodoRequest);
+  /** No-args constructor for persistence frameworks. */
+  protected TaskId() {
+    super();
+  }
 
   /**
-   * Fetch Collection.
+   * Instantiates a new Task.
    *
-   * @param fetchTodoCollectionRequest the fetch todo collection request
-   * @return fetch todo collection response
+   * @param rootId the root id
    */
-  FetchTodoCollectionResponse fetchCollection(
-      FetchTodoCollectionRequest fetchTodoCollectionRequest);
+  public TaskId(UUID rootId) {
+    super(rootId);
+  }
 }

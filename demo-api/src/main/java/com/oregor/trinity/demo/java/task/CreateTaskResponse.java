@@ -18,37 +18,36 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
+
+import com.oregor.trinity4j.api.ApiResponse;
 
 /**
- * The Todo Collection Record.
+ * The Create Task Response.
  *
  * @author PolyGenesis Platform
  */
-public class TodoCollectionRecord {
+public class CreateTaskResponse extends ApiResponse {
 
-  private String description;
-  private Boolean done;
+  private String taskId;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Todo Collection Record. */
+  /** Instantiates a new Create Task Response. */
   @SuppressWarnings("CPD-START")
-  public TodoCollectionRecord() {
+  public CreateTaskResponse() {
     super();
   }
 
   /**
-   * Instantiates a new Todo Collection Record.
+   * Instantiates a new Create Task Response.
    *
-   * @param description the description
-   * @param done the done
+   * @param taskId the task id
    */
-  public TodoCollectionRecord(String description, Boolean done) {
-    setDescription(description);
-    setDone(done);
+  public CreateTaskResponse(String taskId) {
+    setTaskId(taskId);
   }
 
   // ===============================================================================================
@@ -56,21 +55,12 @@ public class TodoCollectionRecord {
   // ===============================================================================================
 
   /**
-   * Gets the Description.
+   * Gets the Task Id.
    *
    * @return string
    */
-  public String getDescription() {
-    return this.description;
-  }
-
-  /**
-   * Gets the Done.
-   *
-   * @return boolean
-   */
-  public Boolean getDone() {
-    return this.done;
+  public String getTaskId() {
+    return this.taskId;
   }
 
   // ===============================================================================================
@@ -78,21 +68,12 @@ public class TodoCollectionRecord {
   // ===============================================================================================
 
   /**
-   * Sets the Description.
+   * Sets the Task Id.
    *
-   * @param description the description
-   */
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  /**
-   * Sets the Done.
-   *
-   * @param done the done
+   * @param taskId the task id
    */
   @SuppressWarnings("CPD-END")
-  public void setDone(Boolean done) {
-    this.done = done;
+  public void setTaskId(String taskId) {
+    this.taskId = taskId;
   }
 }

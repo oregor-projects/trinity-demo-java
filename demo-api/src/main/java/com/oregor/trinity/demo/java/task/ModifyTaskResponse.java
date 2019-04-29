@@ -18,36 +18,36 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity4j.api.ApiResponse;
 
 /**
- * The Modify Todo Response.
+ * The Modify Task Response.
  *
  * @author PolyGenesis Platform
  */
-public class ModifyTodoResponse extends ApiResponse {
+public class ModifyTaskResponse extends ApiResponse {
 
-  private String todoId;
+  private String taskId;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Modify Todo Response. */
+  /** Instantiates a new Modify Task Response. */
   @SuppressWarnings("CPD-START")
-  public ModifyTodoResponse() {
+  public ModifyTaskResponse() {
     super();
   }
 
   /**
-   * Instantiates a new Modify Todo Response.
+   * Instantiates a new Modify Task Response.
    *
-   * @param todoId the todo id
+   * @param taskId the task id
    */
-  public ModifyTodoResponse(String todoId) {
-    setTodoId(todoId);
+  public ModifyTaskResponse(String taskId) {
+    setTaskId(taskId);
   }
 
   // ===============================================================================================
@@ -55,12 +55,12 @@ public class ModifyTodoResponse extends ApiResponse {
   // ===============================================================================================
 
   /**
-   * Gets the Todo Id.
+   * Gets the Task Id.
    *
    * @return string
    */
-  public String getTodoId() {
-    return this.todoId;
+  public String getTaskId() {
+    return this.taskId;
   }
 
   // ===============================================================================================
@@ -68,12 +68,12 @@ public class ModifyTodoResponse extends ApiResponse {
   // ===============================================================================================
 
   /**
-   * Sets the Todo Id.
+   * Sets the Task Id.
    *
-   * @param todoId the todo id
+   * @param taskId the task id
    */
   @SuppressWarnings("CPD-END")
-  public void setTodoId(String todoId) {
-    this.todoId = todoId;
+  public void setTaskId(String taskId) {
+    this.taskId = taskId;
   }
 }

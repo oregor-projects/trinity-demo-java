@@ -18,16 +18,16 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity4j.api.ApiResponse;
 
 /**
- * The Fetch Todo Response.
+ * The Fetch Task Response.
  *
  * @author PolyGenesis Platform
  */
-public class FetchTodoResponse extends ApiResponse {
+public class FetchTaskResponse extends ApiResponse {
 
   private String description;
   private Boolean done;
@@ -36,19 +36,19 @@ public class FetchTodoResponse extends ApiResponse {
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Fetch Todo Response. */
+  /** Instantiates a new Fetch Task Response. */
   @SuppressWarnings("CPD-START")
-  public FetchTodoResponse() {
+  public FetchTaskResponse() {
     super();
   }
 
   /**
-   * Instantiates a new Fetch Todo Response.
+   * Instantiates a new Fetch Task Response.
    *
    * @param description the description
    * @param done the done
    */
-  public FetchTodoResponse(String description, Boolean done) {
+  public FetchTaskResponse(String description, Boolean done) {
     setDescription(description);
     setDone(done);
   }

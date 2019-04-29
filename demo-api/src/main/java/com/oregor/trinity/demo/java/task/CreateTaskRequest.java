@@ -18,18 +18,17 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity4j.api.ApiRequest;
 
 /**
- * The Modify Todo Request.
+ * The Create Task Request.
  *
  * @author PolyGenesis Platform
  */
-public class ModifyTodoRequest extends ApiRequest {
+public class CreateTaskRequest extends ApiRequest {
 
-  private String todoId;
   private String description;
   private Boolean done;
 
@@ -37,21 +36,19 @@ public class ModifyTodoRequest extends ApiRequest {
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Modify Todo Request. */
+  /** Instantiates a new Create Task Request. */
   @SuppressWarnings("CPD-START")
-  public ModifyTodoRequest() {
+  public CreateTaskRequest() {
     super();
   }
 
   /**
-   * Instantiates a new Modify Todo Request.
+   * Instantiates a new Create Task Request.
    *
-   * @param todoId the todo id
    * @param description the description
    * @param done the done
    */
-  public ModifyTodoRequest(String todoId, String description, Boolean done) {
-    setTodoId(todoId);
+  public CreateTaskRequest(String description, Boolean done) {
     setDescription(description);
     setDone(done);
   }
@@ -59,15 +56,6 @@ public class ModifyTodoRequest extends ApiRequest {
   // ===============================================================================================
   // GETTERS
   // ===============================================================================================
-
-  /**
-   * Gets the Todo Id.
-   *
-   * @return string
-   */
-  public String getTodoId() {
-    return this.todoId;
-  }
 
   /**
    * Gets the Description.
@@ -90,15 +78,6 @@ public class ModifyTodoRequest extends ApiRequest {
   // ===============================================================================================
   // SETTERS
   // ===============================================================================================
-
-  /**
-   * Sets the Todo Id.
-   *
-   * @param todoId the todo id
-   */
-  public void setTodoId(String todoId) {
-    this.todoId = todoId;
-  }
 
   /**
    * Sets the Description.
