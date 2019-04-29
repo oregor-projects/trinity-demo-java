@@ -18,13 +18,13 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
-import com.oregor.trinity4j.domain.SpringDataRepository;
+import com.oregor.trinity4j.domain.Repository;
 
 /**
- * The Spring Data Repository Interface for Todo.
+ * The Task Persistence Contract.
  *
  * @author PolyGenesis Platform
  */
-public interface TodoRepository extends SpringDataRepository<Todo, TodoId> {}
+public interface TaskPersistence extends Repository<Task, TaskId> {}

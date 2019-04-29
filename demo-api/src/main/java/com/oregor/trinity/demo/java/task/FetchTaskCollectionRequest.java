@@ -18,39 +18,39 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
-import com.oregor.trinity4j.api.ApiRequest;
+import com.oregor.trinity4j.api.ApiPagedCollectionRequest;
 
 /**
- * The Create Todo Request.
+ * The Fetch Task Collection Request.
  *
  * @author PolyGenesis Platform
  */
-public class CreateTodoRequest extends ApiRequest {
+public class FetchTaskCollectionRequest extends ApiPagedCollectionRequest {
 
-  private String description;
-  private Boolean done;
+  private Integer pageNumber;
+  private Integer pageSize;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Create Todo Request. */
+  /** Instantiates a new Fetch Task Collection Request. */
   @SuppressWarnings("CPD-START")
-  public CreateTodoRequest() {
+  public FetchTaskCollectionRequest() {
     super();
   }
 
   /**
-   * Instantiates a new Create Todo Request.
+   * Instantiates a new Fetch Task Collection Request.
    *
-   * @param description the description
-   * @param done the done
+   * @param pageNumber the page number
+   * @param pageSize the page size
    */
-  public CreateTodoRequest(String description, Boolean done) {
-    setDescription(description);
-    setDone(done);
+  public FetchTaskCollectionRequest(Integer pageNumber, Integer pageSize) {
+    setPageNumber(pageNumber);
+    setPageSize(pageSize);
   }
 
   // ===============================================================================================
@@ -58,21 +58,21 @@ public class CreateTodoRequest extends ApiRequest {
   // ===============================================================================================
 
   /**
-   * Gets the Description.
+   * Gets the Page Number.
    *
-   * @return string
+   * @return integer
    */
-  public String getDescription() {
-    return this.description;
+  public Integer getPageNumber() {
+    return this.pageNumber;
   }
 
   /**
-   * Gets the Done.
+   * Gets the Page Size.
    *
-   * @return boolean
+   * @return integer
    */
-  public Boolean getDone() {
-    return this.done;
+  public Integer getPageSize() {
+    return this.pageSize;
   }
 
   // ===============================================================================================
@@ -80,21 +80,21 @@ public class CreateTodoRequest extends ApiRequest {
   // ===============================================================================================
 
   /**
-   * Sets the Description.
+   * Sets the Page Number.
    *
-   * @param description the description
+   * @param pageNumber the page number
    */
-  public void setDescription(String description) {
-    this.description = description;
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
   }
 
   /**
-   * Sets the Done.
+   * Sets the Page Size.
    *
-   * @param done the done
+   * @param pageSize the page size
    */
   @SuppressWarnings("CPD-END")
-  public void setDone(Boolean done) {
-    this.done = done;
+  public void setPageSize(Integer pageSize) {
+    this.pageSize = pageSize;
   }
 }

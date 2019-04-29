@@ -1,6 +1,8 @@
-# Demo microservice application structured according to the Trinity Architecture
+# trinity-demo-java
 
 [![Build Status](https://travis-ci.org/oregor-projects/trinity-demo-java.svg?branch=master)](https://travis-ci.org/oregor-projects/trinity-demo-java)
+
+Demo microservice application structured according to the Trinity Architecture.
 
 To learn more about the Trinity Architecture go to: https://medium.com/oregor
 
@@ -18,7 +20,7 @@ cd trinity-demo-java
 java -jar -Dspring.profiles.active=ci ./demo-app/target/demo-app.jar 
 ```
 
-By executing
+In a new terminal window, by executing:
 
 ```bash
 curl -X GET http://localhost:8080/actuator/health

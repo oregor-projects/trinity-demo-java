@@ -18,39 +18,55 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
-import com.oregor.trinity4j.api.ApiPagedCollectionRequest;
+import com.oregor.trinity4j.api.ApiPagedCollectionResponse;
+import java.util.List;
 
 /**
- * The Fetch Todo Collection Request.
+ * The Fetch Task Collection Response.
  *
  * @author PolyGenesis Platform
  */
-public class FetchTodoCollectionRequest extends ApiPagedCollectionRequest {
+public class FetchTaskCollectionResponse extends ApiPagedCollectionResponse<TaskCollectionRecord> {
 
-  private Integer pageNumber;
-  private Integer pageSize;
+  private List<TaskCollectionRecord> someArrays;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
-  /** Instantiates a new Fetch Todo Collection Request. */
+  /** Instantiates a new Fetch Task Collection Response. */
   @SuppressWarnings("CPD-START")
-  public FetchTodoCollectionRequest() {
+  public FetchTaskCollectionResponse() {
     super();
   }
 
   /**
-   * Instantiates a new Fetch Todo Collection Request.
+   * Instantiates a new Fetch Task Collection Response.
    *
+   * @param someArrays the some arrays
+   */
+  public FetchTaskCollectionResponse(List<TaskCollectionRecord> someArrays) {
+    setSomeArrays(someArrays);
+  }
+
+  /**
+   * Instantiates a new Fetch Task Collection Response.
+   *
+   * @param items the items
+   * @param totalPages the total pages
+   * @param totalElements the total elements
    * @param pageNumber the page number
    * @param pageSize the page size
    */
-  public FetchTodoCollectionRequest(Integer pageNumber, Integer pageSize) {
-    setPageNumber(pageNumber);
-    setPageSize(pageSize);
+  public FetchTaskCollectionResponse(
+      List<TaskCollectionRecord> items,
+      Integer totalPages,
+      Long totalElements,
+      Integer pageNumber,
+      Integer pageSize) {
+    super(items, totalPages, totalElements, pageNumber, pageSize);
   }
 
   // ===============================================================================================
@@ -58,21 +74,12 @@ public class FetchTodoCollectionRequest extends ApiPagedCollectionRequest {
   // ===============================================================================================
 
   /**
-   * Gets the Page Number.
+   * Gets the Some Arrays.
    *
-   * @return integer
+   * @return list< task collection record>
    */
-  public Integer getPageNumber() {
-    return this.pageNumber;
-  }
-
-  /**
-   * Gets the Page Size.
-   *
-   * @return integer
-   */
-  public Integer getPageSize() {
-    return this.pageSize;
+  public List<TaskCollectionRecord> getSomeArrays() {
+    return this.someArrays;
   }
 
   // ===============================================================================================
@@ -80,21 +87,12 @@ public class FetchTodoCollectionRequest extends ApiPagedCollectionRequest {
   // ===============================================================================================
 
   /**
-   * Sets the Page Number.
+   * Sets the Some Arrays.
    *
-   * @param pageNumber the page number
-   */
-  public void setPageNumber(Integer pageNumber) {
-    this.pageNumber = pageNumber;
-  }
-
-  /**
-   * Sets the Page Size.
-   *
-   * @param pageSize the page size
+   * @param someArrays the some arrays
    */
   @SuppressWarnings("CPD-END")
-  public void setPageSize(Integer pageSize) {
-    this.pageSize = pageSize;
+  public void setSomeArrays(List<TaskCollectionRecord> someArrays) {
+    this.someArrays = someArrays;
   }
 }

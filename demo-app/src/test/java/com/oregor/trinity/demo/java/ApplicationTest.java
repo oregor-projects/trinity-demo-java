@@ -20,6 +20,9 @@
 
 package com.oregor.trinity.demo.java;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.TimeZone;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,5 +36,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ApplicationTest {
 
   @Test
-  public void contextLoads() {}
+  public void contextLoads() {
+    assertThat(TimeZone.getDefault()).isEqualTo(TimeZone.getTimeZone("UTC"));
+  }
 }

@@ -18,14 +18,14 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 /**
- * Commands contract for Todos.
+ * Commands contract for Tasks.
  *
  * @author PolyGenesis Platform
  */
-public interface TodoService {
+public interface TaskService {
 
   // ===============================================================================================
   // METHODS
@@ -34,16 +34,16 @@ public interface TodoService {
   /**
    * Create.
    *
-   * @param createTodoRequest the create todo request
-   * @return create todo response
+   * @param createTaskRequest the create task request
+   * @return create task response
    */
-  CreateTodoResponse create(CreateTodoRequest createTodoRequest);
+  CreateTaskResponse create(CreateTaskRequest createTaskRequest);
 
   /**
    * Modify.
    *
-   * @param modifyTodoRequest the modify todo request
-   * @return modify todo response
+   * @param modifyTaskRequest the modify task request
+   * @return modify task response
    */
-  ModifyTodoResponse modify(ModifyTodoRequest modifyTodoRequest);
+  ModifyTaskResponse modify(ModifyTaskRequest modifyTaskRequest);
 }

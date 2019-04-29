@@ -905,7 +905,6 @@
               <report>dependency-info</report>
               <report>issue-tracking</report>
               <report>project-team</report>
-              <!--<report>dependencies</report>-->
               <report>dependency-management</report>
               <report>dependency-convergence</report>
               <report>license</report>

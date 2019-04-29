@@ -18,37 +18,33 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
-import com.oregor.trinity4j.domain.AggregateRootId;
-import java.util.UUID;
-import javax.persistence.Embeddable;
+import com.oregor.trinity4j.commons.assertion.Assertion;
+import org.springframework.stereotype.Component;
 
 /**
- * The Todo Aggregate Root Id.
+ * Task Converter.
  *
  * @author PolyGenesis Platform
  */
-@Embeddable
-public class TodoId extends AggregateRootId {
-
-  private static final long serialVersionUID = 1L;
+@Component
+public class TaskConverter {
 
   // ===============================================================================================
-  // CONSTRUCTOR(S)
+  // ANY
   // ===============================================================================================
-
-  /** No-args constructor for persistence frameworks. */
-  protected TodoId() {
-    super();
-  }
 
   /**
-   * Instantiates a new Todo.
+   * Convert To Task Collection Record.
    *
-   * @param rootId the root id
+   * @param task the task
+   * @return task collection record
    */
-  public TodoId(UUID rootId) {
-    super(rootId);
+  public TaskCollectionRecord convertToTaskCollectionRecord(Task task) {
+
+    Assertion.isNotNull(task, "task is required");
+
+    return new TaskCollectionRecord(task.getDescription(), task.getDone());
   }
 }

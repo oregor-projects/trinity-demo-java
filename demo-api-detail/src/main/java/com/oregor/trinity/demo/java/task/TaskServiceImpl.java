@@ -18,7 +18,7 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
+package com.oregor.trinity.demo.java.task;
 
 import com.oregor.trinity4j.commons.assertion.Assertion;
 import java.util.UUID;
@@ -26,27 +26,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Implements the Todo Service.
+ * Implements the Task Service.
  *
  * @author PolyGenesis Platform
  */
 @Service
 @Transactional
-public class TodoServiceImpl implements TodoService {
+public class TaskServiceImpl implements TaskService {
 
-  private TodoPersistence todoPersistence;
+  private TaskPersistence taskPersistence;
 
   // ===============================================================================================
   // CONSTRUCTOR(S)
   // ===============================================================================================
 
   /**
-   * Instantiates a new Todo Service Impl.
+   * Instantiates a new Task Service Impl.
    *
-   * @param todoPersistence the todo persistence
+   * @param taskPersistence the task persistence
    */
-  public TodoServiceImpl(TodoPersistence todoPersistence) {
-    this.todoPersistence = todoPersistence;
+  public TaskServiceImpl(TaskPersistence taskPersistence) {
+    this.taskPersistence = taskPersistence;
   }
 
   // ===============================================================================================
@@ -56,43 +56,43 @@ public class TodoServiceImpl implements TodoService {
   /**
    * Create.
    *
-   * @param createTodoRequest the create todo request
-   * @return create todo response
+   * @param createTaskRequest the create task request
+   * @return create task response
    */
   @Override
-  public CreateTodoResponse create(CreateTodoRequest createTodoRequest) {
+  public CreateTaskResponse create(CreateTaskRequest createTaskRequest) {
 
-    Assertion.isNotNull(createTodoRequest, "createTodoRequest is required");
+    Assertion.isNotNull(createTaskRequest, "createTaskRequest is required");
 
-    Todo todo =
-        new Todo(
-            todoPersistence.nextId(),
-            createTodoRequest.getDescription(),
-            createTodoRequest.getDone());
+    Task task =
+        new Task(
+            taskPersistence.nextId(),
+            createTaskRequest.getDescription(),
+            createTaskRequest.getDone());
 
-    todoPersistence.store(todo);
+    taskPersistence.store(task);
 
-    return new CreateTodoResponse(todo.getId().getRootId().toString());
+    return new CreateTaskResponse(task.getId().getRootId().toString());
   }
 
   /**
    * Modify.
    *
-   * @param modifyTodoRequest the modify todo request
-   * @return modify todo response
+   * @param modifyTaskRequest the modify task request
+   * @return modify task response
    */
   @Override
-  public ModifyTodoResponse modify(ModifyTodoRequest modifyTodoRequest) {
+  public ModifyTaskResponse modify(ModifyTaskRequest modifyTaskRequest) {
 
-    Assertion.isNotNull(modifyTodoRequest, "modifyTodoRequest is required");
+    Assertion.isNotNull(modifyTaskRequest, "modifyTaskRequest is required");
 
-    Todo todo =
-        todoPersistence
-            .restore(new TodoId(UUID.fromString(modifyTodoRequest.getTodoId())))
-            .orElseThrow(() -> new IllegalArgumentException("Cannot restore todo"));
+    Task task =
+        taskPersistence
+            .restore(new TaskId(UUID.fromString(modifyTaskRequest.getTaskId())))
+            .orElseThrow(() -> new IllegalArgumentException("Cannot restore task"));
 
-    todoPersistence.store(todo);
+    taskPersistence.store(task);
 
-    return new ModifyTodoResponse(todo.getId().getRootId().toString());
+    return new ModifyTaskResponse(task.getId().getRootId().toString());
   }
 }

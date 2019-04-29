@@ -18,33 +18,33 @@
  * ===========================LICENSE_END==================================
  */
 
-package com.oregor.trinity.demo.java.todo;
-
-import com.oregor.trinity4j.commons.assertion.Assertion;
-import org.springframework.stereotype.Component;
+package com.oregor.trinity.demo.java.task;
 
 /**
- * Todo Converter.
+ * Queries contract for Tasks.
  *
  * @author PolyGenesis Platform
  */
-@Component
-public class TodoConverter {
+public interface TaskQueryService {
 
   // ===============================================================================================
-  // ANY
+  // METHODS
   // ===============================================================================================
 
   /**
-   * Convert To Todo Collection Record.
+   * Fetch.
    *
-   * @param todo the todo
-   * @return todo collection record
+   * @param fetchTaskRequest the fetch task request
+   * @return fetch task response
    */
-  public TodoCollectionRecord convertToTodoCollectionRecord(Todo todo) {
+  FetchTaskResponse fetch(FetchTaskRequest fetchTaskRequest);
 
-    Assertion.isNotNull(todo, "todo is required");
-
-    return new TodoCollectionRecord(todo.getDescription(), todo.getDone());
-  }
+  /**
+   * Fetch Collection.
+   *
+   * @param fetchTaskCollectionRequest the fetch task collection request
+   * @return fetch task collection response
+   */
+  FetchTaskCollectionResponse fetchCollection(
+      FetchTaskCollectionRequest fetchTaskCollectionRequest);
 }
