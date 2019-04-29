@@ -22,7 +22,7 @@
   </parent>
   <groupId>com.oregor.trinity.demo.java</groupId>
   <artifactId>trinity-demo-java</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>trinity-demo-java</name>
   <description>trinity-demo-java</description>
   <url>https://www.oregor.com</url>
@@ -267,7 +267,7 @@
           <version>${license-maven-plugin.version}</version>
           <configuration>
             <licenseName>apache_v2</licenseName>
-            <projectName>Trinity Architecture Demo</projectName>
+            <projectName>trinity-demo-java</projectName>
             <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
             <emptyLineAfterHeader>true</emptyLineAfterHeader>
             <failOnMissingHeader>true</failOnMissingHeader>

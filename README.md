@@ -1,5 +1,7 @@
 # Demo microservice application structured according to the Trinity Architecture
 
+[![Build Status](https://travis-ci.org/oregor-projects/trinity-demo-java.svg?branch=master)](https://travis-ci.org/oregor-projects/trinity-demo-java)
+
 To learn more about the Trinity Architecture go to: https://medium.com/oregor
 
 To scaffold your own project in java go to: https://github.com/oregor-projects/trinity-scaffolder-java

@@ -1,6 +1,6 @@
 /*-
  * ==========================LICENSE_START=================================
- * Trinity Architecture Demo
+ * trinity-demo-java
  * ========================================================================
  * Copyright (C) 2019 Christos Tsakostas, OREGOR LTD
  * ========================================================================
@@ -26,6 +26,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/** @author Trinity Scaffolder */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles({"ci"})
