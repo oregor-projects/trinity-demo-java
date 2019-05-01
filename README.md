@@ -4,7 +4,7 @@
 
 Demo microservice application structured according to the Trinity Architecture.
 
-To learn more about the Trinity Architecture go to: https://medium.com/oregor
+To learn more about the Trinity Architecture go to: https://medium.com/oregor/the-trinity-architecture-c89ed5743c1e
 
 To scaffold your own project in java go to: https://github.com/oregor-projects/trinity-scaffolder-java
 
