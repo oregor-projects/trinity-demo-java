@@ -93,7 +93,7 @@
     <license-maven-plugin.version>1.14</license-maven-plugin.version>
     <fmt-maven-plugin.version>2.6.0</fmt-maven-plugin.version>
     <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
-    <checkstyle.version>8.15</checkstyle.version>
+    <checkstyle.version>8.29</checkstyle.version>
     <findbugs-maven-plugin.version>3.0.0</findbugs-maven-plugin.version>
     <maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
     <maven-jxr-plugin.version>2.4</maven-jxr-plugin.version>
